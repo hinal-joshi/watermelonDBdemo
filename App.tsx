@@ -10,6 +10,7 @@ import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
 import Header from './components/Header';
 import Creator from './components/Creator';
 import Chart from './components/Chart';
+import SyncIndicator from './components/SyncIndicator';
 
 
 function App(): JSX.Element {
@@ -19,6 +20,7 @@ function App(): JSX.Element {
     <>
       <StatusBar />
       <SafeAreaView>
+        <SyncIndicator/>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <Header onOpenCreator={() => setShowCreator(true)} />
           <Creator

@@ -7,11 +7,11 @@ import {
   TouchableHighlight,
   View,
   Dimensions,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 import {saveWeight} from '../data/helpers';
 
-const primaryColor ='#FB8C00';
+const primaryColor = '#FB8C00';
 const windowDim = Dimensions.get('window');
 const windowHeight = windowDim.height;
 const Creator: FC<{
@@ -51,13 +51,13 @@ const Creator: FC<{
             style={creatorStyles.input}
             placeholder="Your weight"
             keyboardType="decimal-pad"
-            onChangeText={(text) => setWeight(text)}
+            onChangeText={text => setWeight(text)}
             value={weight}
           />
           <TextInput
             placeholder="Additional note (optional)"
             style={creatorStyles.input}
-            onChangeText={(text) => setNote(text)}
+            onChangeText={text => setNote(text)}
             value={note}
           />
           <Button
@@ -75,44 +75,44 @@ const Creator: FC<{
 export default Creator;
 
 const creatorStyles = StyleSheet.create({
-    centeredView: {
-      flex: 1,
-      justifyContent: 'flex-end',
-      backgroundColor: 'rgba(255, 255, 255, 0.6)',
+  centeredView: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+  },
+  modalView: {
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 10,
+    height: windowHeight / 2,
+    shadowColor: '#cacaca',
+    shadowOffset: {
+      width: 0,
+      height: 1,
     },
-    modalView: {
-      backgroundColor: '#FFFFFF',
-      borderTopLeftRadius: 20,
-      borderTopRightRadius: 20,
-      padding: 10,
-      height: windowHeight / 2,
-      shadowColor: '#cacaca',
-      shadowOffset: {
-        width: 0,
-        height: 1,
-      },
-      shadowOpacity: 0.1,
-      shadowRadius: 2,
-      elevation: 1,
-    },
-    topActions: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      },
-      topCloseButton: {
-        padding: 10,
-        color: '#494949',
-        fontWeight: 'bold',
-        fontSize: 25,
-      },
-      input: {
-        height: 50,
-        borderWidth: 1,
-        borderRadius: 3,
-        marginBottom: 10,
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderColor: '#c9c9c9',
-      },
-  })
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1,
+  },
+  topActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  topCloseButton: {
+    padding: 10,
+    color: '#494949',
+    fontWeight: 'bold',
+    fontSize: 25,
+  },
+  input: {
+    height: 50,
+    borderWidth: 1,
+    borderRadius: 3,
+    marginBottom: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderColor: '#c9c9c9',
+  },
+});

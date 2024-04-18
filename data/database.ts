@@ -1,14 +1,14 @@
-import { Database } from "@nozbe/watermelondb";
+import {Database} from '@nozbe/watermelondb';
 import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite';
 
-import Weight from "./weight";
-import schema from "./schema";
+import Weight from './weight';
+import schema from './schema';
 
 const adapter = new SQLiteAdapter({
-    schema,
-  });
+  schema,
+});
 
 export const database = new Database({
-    adapter,
-    modelClasses:[Weight],
-})
+  adapter,
+  modelClasses: [Weight],
+});
